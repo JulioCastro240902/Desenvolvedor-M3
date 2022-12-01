@@ -1,1 +1,837 @@
 @import "reset";
+
+$Black-800: #000;
+$White-800: #fff;
+$Grey-300: #333333;
+$Grey-800: #666666;
+$Cyan-800: #00c0ee;
+
+$Mobile: 375px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: auto;
+
+  header {
+    max-width: 1500px;
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    border-bottom: 2px solid #c7c7c7;
+
+    padding-left: 162px;
+    padding-right: 166px;
+
+    div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        width: 119px;
+        height: 30px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .Shop {
+        width: 17px;
+        height: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  main {
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 162px;
+    padding-right: 166px;
+    display: flex;
+    justify-content: space-between;
+
+    .FilterOpen {
+      display: none;
+    }
+
+    .TitleResponsive {
+      display: none;
+    }
+
+    .ResponsiveMenu {
+      display: none;
+    }
+
+    .Filter {
+      display: none;
+    }
+
+    aside {
+      h1 {
+        margin-top: 40px;
+        color: $Grey-300;
+        font-size: 32px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .Colors {
+        margin-top: 65px;
+
+        #ColorTitle {
+          text-transform: uppercase;
+          color: $Grey-300;
+          margin-bottom: 24px;
+          font-weight: 400;
+          letter-spacing: 0.05em;
+          line-height: 22px;
+        }
+
+        .BtnShow {
+          margin-top: 10px;
+          outline: none;
+          border: none;
+          background: none;
+          color: #666666;
+          text-decoration: underline;
+          cursor: pointer;
+
+          img {
+            width: 7px;
+            height: 5px;
+          }
+        }
+
+        .ShowMore {
+          display: block;
+        }
+
+        .Hide {
+          display: none;
+        }
+
+        .CheckBoxStyle {
+          margin-top: 10px;
+          display: grid;
+          grid-template-columns: 1em auto;
+          gap: 0.5em;
+
+          input[type="checkbox"] {
+            appearance: none;
+            margin: 0;
+            background-color: #fff; // for iOS users
+            width: 16px;
+            height: 16px;
+            transform: translateY(-0.075em);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+          }
+
+          input[type="checkbox"]::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: $Cyan-800;
+          }
+
+          input[type="checkbox"]:checked::before {
+            transform: scale(1);
+          }
+
+          label {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 100%;
+            color: $Black-800;
+          }
+        }
+      }
+
+      .ButtonsSizes {
+        width: 153px;
+        height: 158px;
+        margin-top: 24px;
+
+        .Sizes {
+          margin-bottom: 24px;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .Wrapper {
+          width: 153px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 8px;
+
+          button {
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: none;
+            color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+
+            &:focus-within {
+              border: 1px solid $Cyan-800;
+              color: $Black-800;
+            }
+          }
+        }
+      }
+
+      .Price {
+        width: 157px;
+        height: 156px;
+        margin-top: 24px;
+
+        .TitlePrice {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: $Grey-300;
+          margin-bottom: 14px;
+        }
+
+        .InputBox {
+          margin-top: 6px;
+          display: grid;
+          grid-template-columns: 1em auto;
+          gap: 0.5em;
+
+          input[type="checkbox"] {
+            appearance: none;
+            margin: 0;
+            background-color: #fff; // for iOS users
+            width: 16px;
+            height: 16px;
+            transform: translateY(-0.07em);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+          }
+
+          input[type="checkbox"]::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: $Cyan-800;
+          }
+
+          input[type="checkbox"]:checked::before {
+            transform: scale(1);
+          }
+
+          label {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 100%;
+            color: $Black-800;
+          }
+        }
+      }
+    }
+
+    section {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .SelectBox {
+        margin-top: 53px;
+        align-self: flex-end;
+
+        .Select {
+          select {
+            width: 142px;
+            height: 42px;
+            padding: 10px 34px 10px 10px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            color: $Black-800;
+            outline: none;
+            appearance: none;
+            background: url("../img/arrow.svg") 90% 50% no-repeat;
+          }
+        }
+      }
+
+      .ProductBox {
+        width: 100%;
+        margin-top: 54px;
+        padding: 0 5%;
+        display: flex;
+
+        .ProductWrapper {
+          // width: calc(195px * 3 + (64.75px) * 2);
+          width: 800px;
+          flex-wrap: wrap;
+          display: flex;
+          align-items: center;
+          gap: 40px;
+
+          justify-content: space-evenly;
+        }
+
+        .Product {
+          width: 195.25px;
+          height: 424px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          figure {
+            width: 195px;
+            height: 293px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            text-transform: uppercase;
+            color: $Black-800;
+            margin-top: 10px;
+          }
+
+          .Values {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: $Black-800;
+          }
+
+          .HowManyTimes {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: $Grey-800;
+          }
+
+          button {
+            width: 195px;
+            height: 33px;
+            background: $Black-800;
+            color: $White-800;
+            margin-top: 14px;
+            padding: 7px 49px;
+          }
+        }
+      }
+
+      button {
+        width: 175px;
+        height: 35px;
+        margin-top: 70px;
+        margin-bottom: 35px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 19px;
+        font-weight: 700;
+        color: $White-800;
+        background-color: $Cyan-800;
+        cursor: pointer;
+      }
+    }
+  }
+
+  footer {
+    max-width: 1500px;
+    width: 100%;
+    height: 33px;
+    margin: 0 auto;
+    background-color: $Black-800;
+    padding-left: 162px;
+    padding-right: 166px;
+
+    p {
+      font-family: "Opens Sans", sans-serif;
+      position: relative;
+      width: 350px;
+      height: 19px;
+      top: 7px;
+      left: calc(50% - 300px / 2 + 21px);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $White-800;
+    }
+  }
+}
+
+@media screen and (max-width: $Mobile) {
+  body {
+    header {
+      max-width: 375px;
+      padding-left: 27px;
+      padding-right: 29px;
+    }
+
+    main {
+      padding-left: 0px;
+      padding-right: 0px;
+      max-width: 375px;
+      align-items: center;
+      flex-direction: column;
+
+      .TitleResponsive {
+        display: block;
+        margin-top: 24px;
+        color: $Grey-300;
+        font-size: 32px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .ResponsiveMenu {
+        width: 343px;
+        height: 49px;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border: 1px solid #666666;
+
+        button {
+          width: 50%;
+          height: 100%;
+          font-family: "Open Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 33px;
+          color: #666666;
+          outline: none;
+          background: none;
+          border: none;
+
+          &:first-child {
+            border-right: 1px solid #666666;
+          }
+        }
+      }
+
+      .FilterOpen {
+        width: 100vw;
+        height: 150vh;
+        bottom: 48px;
+        top: 0;
+        position: absolute;
+        background-color: $White-800;
+
+        .FilterTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 70px;
+          padding: 0px 16px;
+
+          border-bottom: 1px solid #666666;
+
+          h2 {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 38px;
+            text-transform: uppercase;
+            color: #666666;
+          }
+
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        .ColorFilterResponsive {
+          width: 100%;
+          padding: 0px 16px;
+
+          .ColorTitle {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h2 {
+              font-family: "Open Sans";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+              line-height: 33px;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              color: #666666;
+            }
+
+            img {
+              width: 18px;
+              height: 13px;
+            }
+          }
+
+          .CheckBoxResponsive {
+            margin-top: 20px;
+            .CheckBoxStyle {
+              margin-top: 10px;
+              display: grid;
+              grid-template-columns: 1em auto;
+              gap: 0.5em;
+
+              input[type="checkbox"] {
+                appearance: none;
+                margin: 0;
+                background-color: #fff; // for iOS users
+                width: 16px;
+                height: 16px;
+                transform: translateY(-0.075em);
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                display: grid;
+                place-content: center;
+                cursor: pointer;
+              }
+
+              input[type="checkbox"]::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                background-color: $Cyan-800;
+              }
+
+              input[type="checkbox"]:checked::before {
+                transform: scale(1);
+              }
+
+              label {
+                font-family: "Open Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 100%;
+                color: $Black-800;
+              }
+            }
+          }
+        }
+
+        .SizesTitle {
+          margin-top: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 16px;
+
+          h2 {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #666666;
+          }
+
+          img {
+            width: 18px;
+            height: 13px;
+          }
+        }
+
+        .SizesFilterButtonResponsive {
+          padding-left: 16px;
+          margin-top: 20px;
+
+          .Wrapper {
+            width: 153px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+
+            button {
+              width: 32px;
+              height: 32px;
+              border: 1px solid rgba(0, 0, 0, 0.5);
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              background: none;
+              color: rgba(0, 0, 0, 0.5);
+              cursor: pointer;
+
+              &:focus-within {
+                border: 1px solid $Cyan-800;
+                color: $Black-800;
+              }
+            }
+          }
+        }
+
+        .PriceTitle {
+          margin-top: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 16px;
+
+          h2 {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #666666;
+          }
+
+          img {
+            width: 18px;
+            height: 13px;
+          }
+        }
+
+        .PriceFilterResponsive {
+          margin-top: 20px;
+          padding-left: 16px;
+          .InputBox {
+            margin-top: 6px;
+            display: grid;
+            grid-template-columns: 1em auto;
+            gap: 0.5em;
+
+            input[type="checkbox"] {
+              appearance: none;
+              margin: 0;
+              background-color: #fff; // for iOS users
+              width: 16px;
+              height: 16px;
+              transform: translateY(-0.07em);
+              border: 1px solid rgba(0, 0, 0, 0.5);
+              display: grid;
+              place-content: center;
+              cursor: pointer;
+            }
+
+            input[type="checkbox"]::before {
+              content: "";
+              width: 10px;
+              height: 10px;
+              transform: scale(0);
+              transition: 120ms transform ease-in-out;
+              background-color: $Cyan-800;
+            }
+
+            input[type="checkbox"]:checked::before {
+              transform: scale(1);
+            }
+
+            label {
+              font-family: "Open Sans";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 100%;
+              color: $Black-800;
+            }
+          }
+        }
+
+        .ButtonsFIlter {
+          margin-top: 30px;
+          padding: 0px 16px;
+
+          button {
+            width: 160px;
+            height: 35px;
+            border: 1px solid #666666;
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            text-transform: uppercase;
+            color: #666666;
+            transition: all 0.5s;
+            outline: none;
+            background: none;
+
+            &:hover {
+              background-color: $Cyan-800;
+              border: 1px solid $Cyan-800;
+
+              color: $White-800;
+            }
+          }
+        }
+      }
+
+      .OrderOpen {
+        width: 100vw;
+        height: 150vh;
+        bottom: 48px;
+        top: 0;
+        position: absolute;
+        background-color: $White-800;
+
+        .OrderOpenTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 70px;
+          padding: 0px 16px;
+
+          border-bottom: 1px solid #666666;
+
+          h2 {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 38px;
+            text-transform: uppercase;
+            color: #666666;
+          }
+
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        .OrderBy {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+          padding: 0px 16px;
+          margin-top: 30px;
+
+          button {
+            outline: none;
+            border: none;
+            background: none;
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 30px;
+            color: $Black-800;
+          }
+        }
+      }
+
+      aside {
+        display: none;
+      }
+
+      section {
+        .SelectBox {
+          display: none;
+        }
+
+        .ProductBox {
+          margin-top: 54px;
+          padding: 0;
+
+          .ProductWrapper {
+            width: 375px;
+
+            justify-content: center;
+          }
+
+          .Product {
+            width: 162px;
+            height: 356.61px;
+
+            figure {
+              width: 155.95px;
+              height: 242.48px;
+            }
+
+            p {
+              font-size: 14px;
+              margin-top: 8px;
+            }
+
+            .Values {
+              margin-top: 0px;
+            }
+
+            button {
+              width: 162px;
+              height: 33px;
+            }
+          }
+        }
+        button {
+          margin-top: 39px;
+          margin-bottom: 44px;
+        }
+      }
+    }
+    footer {
+      max-width: 375px;
+      padding-left: 0px;
+      padding-right: 0px;
+
+      p {
+        left: calc(50% - 300px / 2 + 0.5px);
+      }
+    }
+  }
+}

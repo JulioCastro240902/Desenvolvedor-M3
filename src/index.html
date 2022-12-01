@@ -1,19 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header>
+      <div>
+        <figure class="Logo">
+          <img src="./img/logo-m3.png" alt="Logo da empresa M3" />
+        </figure>
 
-<body>
+        <figure class="Shop">
+          <img src="./img/shop.svg" alt="Carrinho de compras" />
+        </figure>
+      </div>
+    </header>
 
-</body>
-<h1>Desafio m3</h1>
+    <main>
+      <div class="TitleResponsive">
+        <h2>Blusas</h2>
+      </div>
 
-<script src="bundle.js"></script>
+      <div class="ResponsiveMenu">
+        <button class="BorderSide Hide" id="FilterButton">Filtrar</button>
+        <button class="OrderButton Hide" id="OrderByButton">Ordenar</button>
+      </div>
 
+      <div class="FilterOpen" id="FilterOpen">
+        <div class="FilterTitle">
+          <h2>Filter</h2>
+          <img src="./img/close.svg" id="CloseButton" alt="" />
+        </div>
+        <div class="ColorFilterResponsive">
+          <div class="ColorTitle">
+            <h2>Color</h2>
+            <img
+              src="./img/arrow.svg"
+              id="CloseColorButton"
+              alt=""
+              data-target="CloseColorSubFilter"
+            />
+          </div>
+          <div class="CheckBoxResponsive" id="CloseColorSubFilter">
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Amarelo" type="checkbox" />
+              <label for="Amarelo">Amarelo</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Azul" type="checkbox" />
+              <label for="Azul">Azul</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Branco" type="checkbox" />
+              <label for="Branco">Branco</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Cinza" type="checkbox" />
+              <label for="Cinza">Cinza</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Laranja" type="checkbox" />
+              <label for="Laranja">Laranja</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Verde" type="checkbox" />
+              <label for="Verde">Verde</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Vermelho" type="checkbox" />
+              <label for="Vermelho">Vermelho</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Preto" type="checkbox" />
+              <label for="Preto">Preto</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Rosa" type="checkbox" />
+              <label for="Rosa">Rosa</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Vinho" type="checkbox" />
+              <label for="Vinho">Vinho</label>
+            </div>
+          </div>
+        </div>
+        <div class="SizesFilter">
+          <div class="SizesTitle">
+            <h2>Tamanhos</h2>
+            <img
+              src="./img/arrow.svg"
+              id="CloseSizesButton"
+              alt=""
+              data-target="CloseSizesSubFilter"
+            />
+          </div>
+          <div class="SizesFilterButtonResponsive" id="CloseSizesSubFilter">
+            <div class="Wrapper">
+              <button data-target="P" class="SizeButton">P</button>
+              <button data-target="M" class="SizeButton">M</button>
+              <button data-target="G" class="SizeButton">G</button>
+              <button data-target="GG" class="SizeButton">GG</button>
+              <button data-target="U" class="SizeButton">U</button>
+              <button data-target="36" class="SizeButton">36</button>
+              <button data-target="38" class="SizeButton">38</button>
+              <button data-target="40" class="SizeButton">40</button>
+              <button data-target="36" class="SizeButton">36</button>
+              <button data-target="38" class="SizeButton">38</button>
+              <button data-target="40" class="SizeButton">40</button>
+            </div>
+          </div>
+        </div>
+        <div class="FilterPrice">
+          <div class="PriceTitle">
+            <h2>Preço</h2>
+            <img
+              src="./img/arrow.svg"
+              id="ClosePricesButton"
+              alt=""
+              data-target="ClosePricesSubFilter"
+            />
+          </div>
+          <div class="PriceFilterResponsive" id="ClosePricesSubFilter">
+            <div class="InputBox">
+              <input
+                id="0To50"
+                type="checkbox"
+                name=""
+                data-target-min="0"
+                data-target-max="50"
+              />
+              <label for="0To50">de R$0 até R$50</label>
+            </div>
+
+            <div class="InputBox">
+              <input
+                id="51To150"
+                type="checkbox"
+                name=""
+                data-target-min="51"
+                data-target-max="150"
+              />
+              <label for="51To150">de R$51 até R$150</label>
+            </div>
+
+            <div class="InputBox">
+              <input
+                id="151To300"
+                type="checkbox"
+                name=""
+                data-target-min="151"
+                data-target-max="300"
+              />
+              <label for="151To300">de R$151 até R$300</label>
+            </div>
+            <div class="InputBox">
+              <input
+                id="301To500"
+                type="checkbox"
+                name=""
+                data-target-min="301"
+                data-target-max="500"
+              />
+              <label for="301To500">de R$301 até R$500</label>
+            </div>
+
+            <div class="InputBox">
+              <input
+                id="MoreThan500"
+                type="checkbox"
+                data-target-min="500"
+                data-target-max="-1"
+                name=""
+              />
+              <label for="MoreThan500">a partir de R$ 500</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="ButtonsFIlter">
+          <button id="DoneButton">Aplicar</button>
+          <button id="CleanButton">Limpar</button>
+        </div>
+      </div>
+
+      <div class="OrderOpen" id="OrderOpenBy">
+        <div class="OrderOpenTitle">
+          <h2>Ordenar</h2>
+          <img src="./img/close.svg" alt="" id="CloseOrderByButton" />
+        </div>
+        <div class="OrderBy">
+          <button data-target="1" id="MoreRecently">Mais recente</button>
+          <button data-target="3" id="MaxPrice">Maior preço</button>
+          <button data-target="2" id="MinPrice">Menor preço</button>
+        </div>
+      </div>
+
+      <aside>
+        <h1>Blusas</h1>
+
+        <div class="Colors">
+          <h2 id="ColorTitle">Cores</h2>
+
+          <div class="CheckBoxStyle CheckBoxColor">
+            <input id="Amarelo" type="checkbox" />
+            <label for="Amarelo">Amarelo</label>
+          </div>
+
+          <div class="CheckBoxStyle CheckBoxColor">
+            <input id="Azul" type="checkbox" />
+            <label for="Azul">Azul</label>
+          </div>
+
+          <div class="CheckBoxStyle CheckBoxColor">
+            <input id="Branco" type="checkbox" />
+            <label for="Branco">Branco</label>
+          </div>
+
+          <div class="CheckBoxStyle CheckBoxColor">
+            <input id="Cinza" type="checkbox" />
+            <label for="Cinza">Cinza</label>
+          </div>
+
+          <div class="CheckBoxStyle CheckBoxColor">
+            <input id="Laranja" type="checkbox" />
+            <label for="Laranja">Laranja</label>
+          </div>
+
+          <span class="HideSpan">
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Verde" type="checkbox" />
+              <label for="Verde">Verde</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Vermelho" type="checkbox" />
+              <label for="Vermelho">Vermelho</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Preto" type="checkbox" />
+              <label for="Preto">Preto</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Rosa" type="checkbox" />
+              <label for="Rosa">Rosa</label>
+            </div>
+
+            <div class="CheckBoxStyle CheckBoxColor">
+              <input id="Vinho" type="checkbox" />
+              <label for="Vinho">Vinho</label>
+            </div>
+          </span>
+          <button class="BtnShow" onclick="OpenMoreOptions()">
+            Ver todas as cores
+            <img src="./img/arrow.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="ButtonsSizes">
+          <h2 class="Sizes">Tamanhos</h2>
+
+          <div class="Wrapper">
+            <button data-target="P" class="SizeButton">P</button>
+            <button data-target="M" class="SizeButton">M</button>
+            <button data-target="G" class="SizeButton">G</button>
+            <button data-target="GG" class="SizeButton">GG</button>
+            <button data-target="U" class="SizeButton">U</button>
+            <button data-target="36" class="SizeButton">36</button>
+            <button data-target="38" class="SizeButton">38</button>
+            <button data-target="40" class="SizeButton">40</button>
+            <button data-target="36" class="SizeButton">36</button>
+            <button data-target="38" class="SizeButton">38</button>
+            <button data-target="40" class="SizeButton">40</button>
+          </div>
+        </div>
+
+        <div class="Price">
+          <h2 class="TitlePrice">Faixa de preço</h2>
+
+          <div class="InputBox">
+            <input
+              id="0To50"
+              type="checkbox"
+              name=""
+              data-target-min="0"
+              data-target-max="50"
+            />
+            <label for="0To50">de R$0 até R$50</label>
+          </div>
+
+          <div class="InputBox">
+            <input
+              id="51To150"
+              type="checkbox"
+              name=""
+              data-target-min="51"
+              data-target-max="150"
+            />
+            <label for="51To150">de R$51 até R$150</label>
+          </div>
+
+          <div class="InputBox">
+            <input
+              id="151To300"
+              type="checkbox"
+              name=""
+              data-target-min="151"
+              data-target-max="300"
+            />
+            <label for="151To300">de R$151 até R$300</label>
+          </div>
+          <div class="InputBox">
+            <input
+              id="301To500"
+              type="checkbox"
+              name=""
+              data-target-min="301"
+              data-target-max="500"
+            />
+            <label for="301To500">de R$301 até R$500</label>
+          </div>
+
+          <div class="InputBox">
+            <input
+              id="MoreThan500"
+              type="checkbox"
+              name=""
+              data-target-min="500"
+              data-target-max="-1"
+            />
+            <label for="MoreThan500">a partir de R$ 500</label>
+          </div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="SelectBox">
+          <div class="Select">
+            <select id="ordenarFiltros">
+              <option selected disabled hidden>Ordenar por:</option>
+              <option value="1">Mas recentes</option>
+              <option value="2">Menor preço</option>
+              <option value="3">Maior preço</option>
+            </select>
+            <span class="SelectArrow"></span>
+          </div>
+        </div>
+
+        <div class="ProductBox">
+          <div class="ProductWrapper" id="ProductWrapper">
+            <div class="Product">
+              <figure>
+                <img
+                  class="Image"
+                  src="./img/img_2.png"
+                  alt="Camiseta Mescla"
+                />
+              </figure>
+              <p class="TituloCamiseta">Camiseta Mescla</p>
+              <span class="Values">R$ 28,00</span>
+              <span class="HowManyTimes">até 3x de R$9,33</span>
+              <button>Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <button id="btnLoadMore">Carregar mais</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>M3: Implantação de E-commerce VTEX</p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="bundle.js"></script>
+  </body>
 </html>
